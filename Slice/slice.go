@@ -18,7 +18,7 @@ func main() {
 	fmt.Println("Slice: ", slice)
 
 	//append qualcosa
-	slice = append(slice, 6);
+	slice = append(slice, "6");
 
 	fmt.Println("Slice dopo append: ", slice);
 

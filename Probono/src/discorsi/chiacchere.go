@@ -2,12 +2,25 @@ package discorsi
 
 import "errors"
 
-func SalutiBase(saluto []string, risposta[] string) ([]string, error) {
-	if len(saluto) == 0 || len(risposta) == 0 {
-		return nil, errors.New("Non si può fare un discorso da soli")
+func Discorso(t []string, s []string) ([]string, error) {
+
+	lunghezzaDiscorso := len(t) + len(s)
+
+	discorso := make([]string, 0)
+
+	if lunghezzaDiscorso == 0 {
+		return discorso, errors.New("Il discorso non può essere vuoto")
 	}
 
-	var res = append(saluto,risposta...)
+	for j := 0; j < len(t); j++ {
+		discorso = append(discorso, t[j])
+	}
 
-	return res, nil
+	for j := 0; j < len(s); j++ {
+		discorso = append(discorso, s[j])
+	}
+
+	return discorso, nil;
+
 }
+

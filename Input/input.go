@@ -4,7 +4,8 @@ import "fmt"
 
 func main() {
 	var input string;
-	//var s = 5;
+	//var s  = 5;
+
 
 	fmt.Println("Per favore, inserisci una parola...: ");
 

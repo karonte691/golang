@@ -1,16 +1,22 @@
 package main
 
 import (
-	"discorsi"
-	"fmt"
+	"os"
+
+	"frasimpatico"
 )
 
 
 func main() {
-	var s  = []string{"ciao","come","va", "?"};
-	var t  = []string{"bene", "grazie", "te"}
+	file, err := os.Open("test");
+	if err != nil {
+		panic(err)
+	}
 
-	var chiaccherata, _ = discorsi.SalutiBase(s,t);
+	defer file.Close();
 
-	fmt.Println("Un semplice discorso la mattina: ", chiaccherata)
+	reader, err := frasimpatico.ConvertToUtf8(file)
+	if err == nil {
+		frasimpatico.SaveFile(reader)
+	}
 }

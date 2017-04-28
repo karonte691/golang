@@ -14,7 +14,7 @@ func TestMoltiplica(t *testing.T) {
 	j := 2;
 
 	var res, _ = matematica.Moltiplica(x, j);
-	asserzione.Equal(6, res, "Dovrebbe essere 6")
+	asserzione.Equal(5, res, "Dovrebbe essere 6")
 
 }
 
